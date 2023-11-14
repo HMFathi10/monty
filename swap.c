@@ -5,7 +5,7 @@
  * @number: Line Number
  * Return: No return
  **/
-void f_pop(stack_t **head, unsigned int number)
+void f_swap(stack_t **head, unsigned int number)
 {
 	stack_t *temp;
 	int counter = 0;
