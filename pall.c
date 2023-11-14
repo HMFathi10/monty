@@ -1,10 +1,10 @@
 #include "monty.h"
-/*
+/**
  * f_pall - Prints all the values on the stack
  * @head: stack
  * @number: Line number
  * Return: No return
- **/
+ */
 void f_pall(stack_t **head, unsigned int number)
 {
 	stack_t *temp;

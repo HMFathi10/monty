@@ -58,6 +58,7 @@ int execute_op(char *content, stack_t **head, unsigned int counter, FILE *file);
 void addnode(stack_t **head, int n);
 void f_pall(stack_t **head, unsigned int number);
 void f_pint(stack_t **head, unsigned int number);
+void f_pop(stack_t **head, unsigned int number);
 void f_swap(stack_t **head, unsigned int number);
 void safe_exit();
 

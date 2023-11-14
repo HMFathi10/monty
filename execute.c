@@ -2,18 +2,19 @@
 /**
 * execute_op - executes the opcode
 * @stack: head linked list - stack
-* @counter: line_counter
+* @number: line_number
 * @file: poiner to monty file
 * @content: line content
 * Return: int
 */
-int execute_op(char *content, stack_t **stack, unsigned int line_counter, FILE *file)
+int execute_op(char *content, stack_t **stack, unsigned int number, FILE *file)
 {
 	instruction_t op_st[] = {
-		{"push", f_push}, 
-		{"pall", f_pall}, 
-		{"pint", f_pint}, 
-		{"swap", f_swap}, 
+		{"push", f_push},
+		{"pall", f_pall},
+		{"pint", f_pint},
+		{"pop", f_pop},
+		{"swap", f_swap},
 		{NULL, NULL}
 	};
 	int i = 0;
@@ -28,15 +29,15 @@ int execute_op(char *content, stack_t **stack, unsigned int line_counter, FILE *
 	{
 		if (strcmp(op_func, op_st[i].opcode) == 0)
 		{
-			op_st[i].f(stack, line_counter);
+			op_st[i].f(stack, number);
 			return (0);
 		}
 		i++;
 	}
-	
+
 	/* 3) If not found function print error and close file and free stack. */
 	if (op_func && op_st[i].opcode == NULL)
-	{ fprintf(stderr, "L%d: unknown instruction %s\n", line_counter, op_func);
+	{ fprintf(stderr, "L%d: unknown instruction %s\n", number, op_func);
 		fclose(file);
 		free(content);
 		exit(EXIT_FAILURE);
