@@ -1,5 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -54,5 +55,9 @@ extern global_t global;
 void f_push(stack_t **head, unsigned int number);
 int execute_op(char *content, stack_t **head, unsigned int counter, FILE *file);
 void addnode(stack_t **head, int n);
+void f_pall(stack_t **head, unsigned int number);
+void f_pint(stack_t **head, unsigned int number);
+void f_swap(stack_t **head, unsigned int number);
+void safe_exit();
 
 #endif

@@ -11,6 +11,9 @@ int execute_op(char *content, stack_t **stack, unsigned int line_counter, FILE *
 {
 	instruction_t op_st[] = {
 		{"push", f_push}, 
+		{"pall", f_pall}, 
+		{"pint", f_pint}, 
+		{"swap", f_swap}, 
 		{NULL, NULL}
 	};
 	int i = 0;
