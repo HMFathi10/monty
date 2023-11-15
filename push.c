@@ -15,7 +15,7 @@ void f_push(stack_t **head, unsigned int l_number)
 		fprintf(stderr, "L%d: usage: push integer\n", l_number);
 		fclose(global.file);
 		free(global.content);
-		/*free_stack(*head);*/
+		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 

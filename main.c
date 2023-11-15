@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 	}
 
 	/* 4) Free the stack and close the file. */
-	/*free_stack(stack);*/
+	free_stack(stack);
 	fclose(file);
 	return (0);
 }

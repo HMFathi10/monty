@@ -40,8 +40,8 @@ int execute_op(char *content, stack_t **stack, unsigned int number, FILE *file)
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", number, op_func);
 		fclose(file);
 		free(content);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-
 	return (1);
 }
