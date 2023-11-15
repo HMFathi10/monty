@@ -27,5 +27,4 @@ void f_swap(stack_t **head, unsigned int number)
 	value = temp->n;
 	temp->n = temp->next->n;
 	temp->next->n = value;
-	free(temp);
 }
