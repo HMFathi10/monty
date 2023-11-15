@@ -22,7 +22,7 @@ int execute(char *content, stack_t **stack, unsigned int number, FILE *file)
 
 	/* 1) Get Argument function and atgument value. */
 	op_func = strtok(content, " \n\t");
-	if (op_func && op_st[0] == '#')
+	if (op_func && op_func[0] == '#')
 		return (0);
 	global.arg = strtok(NULL, " \n\t");
 
