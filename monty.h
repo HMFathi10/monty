@@ -62,6 +62,7 @@ void f_pint(stack_t **head, unsigned int number);
 void f_pop(stack_t **head, unsigned int number);
 void f_swap(stack_t **head, unsigned int number);
 void f_add(stack_t **head, unsigned int number);
+void f_nop(stack_t **head, unsigned int number);
 void safe_exit(void);
 
 #endif
