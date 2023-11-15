@@ -7,10 +7,27 @@
 */
 void f_push(stack_t **head, unsigned int l_number)
 {
-	int n, is_valid = 0;
+	int n, j = 0, is_valid = 0;
 
 	/* 1) Check if the argument is valid. */
-	if (is_valid == 1)
+	if (global.arg)
+	{
+		if (global.arg[0] == '-')
+			j++;
+		for (; global.arg[j] != '\0'; j++)
+			if (global.arg[j] > 57 || global.arg[j] < 48)
+				flag = 1;
+		if (is_valid == 1)
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", l_number);
+			fclose(global.file);
+			free(global.content);
+			free_stack(*head);
+			exit(EXIT_FAILURE);
+		}
+
+	}
+	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", l_number);
 		fclose(global.file);
@@ -18,7 +35,6 @@ void f_push(stack_t **head, unsigned int l_number)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-
 	/* 2) Adding new node. */
 	n = atoi(global.arg);
 	addnode(head, n);
