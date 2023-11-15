@@ -54,13 +54,13 @@ typedef struct global_type
 }  global_t;
 extern global_t global;
 void f_push(stack_t **head, unsigned int number);
-int execute_op(char *content, stack_t **head, unsigned int counter, FILE *file);
+int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
 void addnode(stack_t **head, int n);
 void free_stack(stack_t *head);
 void f_pall(stack_t **head, unsigned int number);
 void f_pint(stack_t **head, unsigned int number);
 void f_pop(stack_t **head, unsigned int number);
 void f_swap(stack_t **head, unsigned int number);
-void safe_exit();
+void safe_exit(void);
 
 #endif

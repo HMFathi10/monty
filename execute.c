@@ -1,13 +1,13 @@
 #include "monty.h"
 /**
-* execute_op - executes the opcode
+* execute - executes the opcode
 * @stack: head linked list - stack
 * @number: line_number
 * @file: poiner to monty file
 * @content: line content
 * Return: int
 */
-int execute_op(char *content, stack_t **stack, unsigned int number, FILE *file)
+int execute(char *content, stack_t **stack, unsigned int number, FILE *file)
 {
 	instruction_t op_st[] = {
 		{"push", f_push},
