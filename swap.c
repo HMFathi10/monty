@@ -20,7 +20,7 @@ void f_swap(stack_t **head, unsigned int number)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", number);
 		safe_exit();
-		/*free_stack(*head);*/
+		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	temp = *head;
